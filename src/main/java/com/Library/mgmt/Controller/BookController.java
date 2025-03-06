@@ -30,7 +30,7 @@ public class BookController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
     @PostMapping("/addBook")
-    public BookCreationResponse addStudent(@RequestBody BookCreationRequest request){
+    public BookCreationResponse addBook(@RequestBody @Validated BookCreationRequest request){
         LOGGER.info("request landing here in Book Controller is "+ request);
         return bookService.addBook(request);
     }

@@ -16,6 +16,7 @@ import java.util.List;
 @ToString
 @Entity
 @Builder
+@Table(name = "\"USER\"")  // Added for AuthorRepositoryTest
 public class User extends TimeStamps{
 
     @Id

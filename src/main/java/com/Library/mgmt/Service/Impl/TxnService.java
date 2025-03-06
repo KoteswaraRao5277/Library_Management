@@ -113,8 +113,9 @@ public class TxnService {
         }
     }
 
-    private Double calculateSettlementAmount(Txn txnFromDb, Book bookFromDb) {
-        long issueTime = txnFromDb.getIssuedDate().getTime();
+//    private Double calculateSettlementAmount(Txn txnFromDb, Book bookFromDb) {   //changing this method private to public- just to write test cases for this. If we keep it as private , then the writing test case will become hectic, need to test all senarios in returnTxn method too before coming to this method. So to avoid all method testing , just change it from private to public
+    public Double calculateSettlementAmount(Txn txnFromDb, Book bookFromDb) {
+    long issueTime = txnFromDb.getIssuedDate().getTime();
         long returnTime = System.currentTimeMillis();
         long diff = returnTime - issueTime;
         int daysPassed = (int) TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
